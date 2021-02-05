@@ -36,7 +36,7 @@ def add():
 
     if request.method == 'POST':
         new_lego = {
-            'name': request.form.get('plant_name'),
+            'name': request.form.get('lego_name'),
             'model_number': request.form.get('model_number'),
             'model_name': request.form.get('model_name'),
             'photo_url': request.form.get('photo'),
