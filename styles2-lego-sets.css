@@ -57,3 +57,12 @@ body {
 .text-white {
   color: #000000!important;
 }
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -1px;
+    margin-left: -1px;
+}
