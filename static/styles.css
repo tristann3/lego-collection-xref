@@ -27,7 +27,7 @@ body {
 }
 
 .hero-background-img {
-  background-image: url("images/lego-background.jpg");
+  background-image: url("../images/lego-background.jpg");
   padding-top:400px;
   padding-bottom:400px;
   background-attachment: fixed;
