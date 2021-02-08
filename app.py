@@ -20,6 +20,7 @@ lego_collection = mongo.db.legos
 # ROUTES
 ############################################################
 
+
 @app.route('/')
 def legos_list():
     """Display the lego parts list page."""
@@ -30,7 +31,7 @@ def legos_list():
         'legos': lego_data,
     }
     # for when we move our FEW into a template
-    return render_template('legos_list.html', **context)
+    return render_template('sets.html', **context)
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
