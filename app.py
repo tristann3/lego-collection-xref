@@ -4,15 +4,17 @@ from bson.objectid import ObjectId
 from pymongo import MongoClient
 import pymongo
 
-"""Modeled after Web1.1 plant database assignment"""
+""" Modeled after Web1.1 plant database assignment """
 ############################################################
 # SETUP
 ############################################################
 
 app = Flask(__name__)
 
-"""For when we create our database using MongoDB"""
-# lego_collection = db.legos
+app.config["MONGO_URI"] = "mongodb://localhost:27017/plantsDatabase"
+mongo = PyMongo(app)
+
+lego_collection = mongo.db.legos
 
 ############################################################
 # ROUTES
@@ -58,3 +60,6 @@ def delete(lego_id):
 
     # for when we move our FEW into a template
     return redirect(url_for('legos_list'))
+
+if __name__ == '__main__':
+  app.run(debug=True)
