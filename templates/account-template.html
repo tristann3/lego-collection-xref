@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block content %}
+<link rel="stylesheet" href="../static/account.css" />
+<main>
+  {% if loggedIn == False %}
+  <h1>Not logged in</h1>
+
+  {% elif loggedIn == True %} {% include 'brick-list-template.html' %} {%
+  include 'set-list-template.html' %} {% endif %}
+</main>
+{% endblock %}

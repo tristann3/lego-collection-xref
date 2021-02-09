@@ -1,0 +1,82 @@
+{% block content %}
+
+<link rel="stylesheet" href="../static/sets.css" />
+<main>
+  <!-- CARDS -->
+  <div class="container mb-5px mt-5px">
+    <div class="row m-5">
+      <div class="col-lg-6 offset-lg-3"></div>
+    </div>
+  </div>
+  <h1 style="text-align: center">LEGO SETS</h1>
+  <div class="row">
+    <div id="architecture"></div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/lego-san-francisco-set.jpeg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>San Francisco</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/lego-las-vegas-set.jpeg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Las Vegas</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/lego-shanghai-set.jpeg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Shanghai</h3>
+    </div>
+    <div id="technic"></div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/porsche.set.jpeg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Porsche GT3</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/mclaren.set.jpeg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Mclaren Senna</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/lamborghini.set.jpeg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Lamborghini Sian</h3>
+    </div>
+    <div id="art"></div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/iron-man-set.jpeg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Iron Man</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/star-wars-set.jpeg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Star Wars</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/mickey-mouse-set.jpeg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Mickey Mouse</h3>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

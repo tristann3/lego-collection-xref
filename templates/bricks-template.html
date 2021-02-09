@@ -1,0 +1,12 @@
+{% extends 'base.html' %}{% block content %}
+
+<link rel="stylesheet" href="../static/bricks.css" />
+<main>
+  {% include 'brick-list-template.html' %}
+  <!-- CALL TO ACTION -->
+  <div class="jumbotron text-center mb-0">
+    <a href="/account" class="btn btn-primary">PROCEED TO ACCOUNT</a>
+  </div>
+</main>
+
+{% endblock %}
