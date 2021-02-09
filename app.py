@@ -22,16 +22,36 @@ lego_collection = mongo.db.legos
 
 
 @app.route('/')
-def legos_list():
+def homepage():
     """Display the lego parts list page."""
 
-    lego_data = lego_collection.find()
+    # lego_data = lego_collection.find()
 
-    context = {
-        'legos': lego_data,
-    }
+    # context = {
+    #     'legos': lego_data,
+    # }
     # for when we move our FEW into a template
-    return render_template('sets.html', **context)
+    return render_template('index-template.html')
+
+@app.route('/login')
+def login():
+  return render_template('login-template.html')
+
+@app.route('/account')
+def account():
+
+  context = {
+    "loggedIn": True
+  }
+  return render_template('account-template.html', **context)
+
+@app.route('/sets')
+def sets():
+  return render_template('sets-template.html')
+
+@app.route('/bricks')
+def bricks():
+  return render_template('bricks-template.html')
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
@@ -55,7 +75,7 @@ def add():
 
 @app.route('/delete/<lego_id>', methods=['POST'])
 def delete(lego_id):
-    """Deletes lego"""
+    """ Deletes lego """
 
     lego_collection.delete_one({'_id': ObjectId(lego_id)})
 
