@@ -11,7 +11,7 @@ import pymongo
 
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/plantsDatabase"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/legosDatabase"
 mongo = PyMongo(app)
 
 lego_collection = mongo.db.legos
@@ -20,9 +20,17 @@ lego_collection = mongo.db.legos
 # ROUTES
 ############################################################
 
-
 @app.route('/')
+
 def homepage():
+=======
+def home():
+    # renders landing page
+    return render_template('index.html')
+
+@app.route('/bricks')
+def legos_list():
+
     """Display the lego parts list page."""
 
     # lego_data = lego_collection.find()
@@ -31,6 +39,7 @@ def homepage():
     #     'legos': lego_data,
     # }
     # for when we move our FEW into a template
+
     return render_template('index-template.html')
 
 @app.route('/login')
@@ -52,6 +61,9 @@ def sets():
 @app.route('/bricks')
 def bricks():
   return render_template('bricks-template.html')
+=======
+    return render_template('bricks.html', **context)
+
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
