@@ -22,11 +22,11 @@ lego_collection = mongo.db.legos
 
 @app.route('/')
 def homepage():
-    return render_template('index-template.html')
+    return render_template('index.html')
 
 @app.route('/login')
 def login():
-  return render_template('login-template.html')
+  return render_template('login.html')
 
 @app.route('/account')
 def account():
@@ -34,15 +34,15 @@ def account():
   context = {
     "loggedIn": True
   }
-  return render_template('account-template.html', **context)
+  return render_template('account.html', **context)
 
 @app.route('/sets')
 def sets():
-  return render_template('sets-template.html')
+  return render_template('sets.html')
 
 @app.route('/bricks')
 def bricks():
-  return render_template('bricks-template.html')
+  return render_template('bricks.html')
 
 
 @app.route('/add', methods=['GET', 'POST'])
