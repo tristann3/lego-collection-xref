@@ -1,0 +1,81 @@
+{% block context %}
+
+<link rel="stylesheet" href="../static/bricks.css" />
+
+<main>
+  <!-- CARDS -->
+  <div class="container mb-5px mt-5px">
+    <div class="row m-5">
+      <div class="col-lg-6 offset-lg-3"></div>
+    </div>
+  </div>
+  <h1 style="text-align: center">LEGO BRICKS</h1>
+  <div class="row">
+    <div id="architecture"></div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/brick1x1.jpg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Brick 1 X 1</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/brick1x2.jpg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Brick 1 X 2</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/brick2x2.jpg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Brick 2 X 2</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/plate1x1.jpg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Plate 1 X 1</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/plate1x2.jpg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Plate 1 X 2</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/plate1x3.jpg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Plate 1 X 3</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/rims.jpg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Rims</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/tires.jpg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Tires</h3>
+    </div>
+    <div class="col-lg-4">
+      <img
+        src="{{ url_for('static', filename='images/motor.jpg') }}"
+        class="img-fluid rounded"
+      />
+      <h3>Motor</h3>
+    </div>
+  </div>
+</main>
+
+{% endblock %}
