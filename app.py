@@ -11,7 +11,7 @@ import pymongo
 
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/plantsDatabase"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/legosDatabase"
 mongo = PyMongo(app)
 
 lego_collection = mongo.db.legos
@@ -20,18 +20,30 @@ lego_collection = mongo.db.legos
 # ROUTES
 ############################################################
 
-
 @app.route('/')
-def legos_list():
-    """Display the lego parts list page."""
+def homepage():
+    return render_template('index.html')
 
-    lego_data = lego_collection.find()
+@app.route('/login')
+def login():
+  return render_template('login.html')
 
-    context = {
-        'legos': lego_data,
-    }
-    # for when we move our FEW into a template
-    return render_template('sets.html', **context)
+@app.route('/account')
+def account():
+
+  context = {
+    "loggedIn": True
+  }
+  return render_template('account.html', **context)
+
+@app.route('/sets')
+def sets():
+  return render_template('sets.html')
+
+@app.route('/bricks')
+def bricks():
+  return render_template('bricks.html')
+
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
@@ -55,7 +67,7 @@ def add():
 
 @app.route('/delete/<lego_id>', methods=['POST'])
 def delete(lego_id):
-    """Deletes lego"""
+    """ Deletes lego """
 
     lego_collection.delete_one({'_id': ObjectId(lego_id)})
 
