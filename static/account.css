@@ -59,10 +59,22 @@ body {
 }
 
 .row {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin-right: -1px;
-    margin-left: -1px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -1px;
+  margin-left: -1px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  padding-top: 100px;
+  padding-bottom: 50px;
 }
