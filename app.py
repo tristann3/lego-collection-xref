@@ -78,6 +78,7 @@ def delete(lego_id):
     return redirect(url_for('account'))
 
 # This route might eventually replace our current account route
+# The route name will have to be changed (cannot include <lego_id> if we are to have edit form in our main database route)
 @app.route('/update/<lego_id>', methods=['GET', 'POST'])
 def update(lego_id):
   """ Updates lego """
