@@ -31,9 +31,15 @@ def login():
 @app.route('/account')
 def account():
 
+  # returns every lego brick in our collection
+  legos_to_show = lego_collection.find({})
+
   context = {
+    'legos': legos_to_show,
     "loggedIn": True
   }
+
+  # renders account.html (our user's database)
   return render_template('account.html', **context)
 
 @app.route('/sets')
@@ -77,31 +83,17 @@ def delete(lego_id):
     # redirects to account.html (our user's database)
     return redirect(url_for('account'))
 
-# This route might eventually replace our current account route
-# The route name will have to be changed (cannot include <lego_id> if we are to have edit form in our main database route)
-@app.route('/update/<lego_id>', methods=['GET', 'POST'])
+@app.route('/update/<lego_id>', methods=['POST'])
 def update(lego_id):
   """ Updates lego """
 
-  if request.method == 'POST':
-    # currently only updates one lego brick at a time (for if we want individual update buttons)
-    lego_collection.update_one({'_id': ObjectId(lego_id)}),{'$set': {
-      'quantity': request.form.get('quantity')
-      }}
+  # currently only updates one lego brick at a time (for if we want individual update buttons)
+  lego_collection.update_one({'_id': ObjectId(lego_id)}),{'$set': {
+    'quantity': request.form.get('quantity')
+    }}
 
   # redirects to account.html (our user's database)
-    return redirect(url_for('account'))
-  else:
-    # returns every lego brick in our collection
-    legos_to_show = lego_collection.find({})
-
-    context = {
-      'legos': legos_to_show,
-      "loggedIn": True
-    }
-
-    # redirects to account.html (our user's database)
-    return render_template('account.html', **context)
+  return redirect(url_for('account'))
 
 if __name__ == '__main__':
   app.run(debug=True)
