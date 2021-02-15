@@ -7,11 +7,14 @@
   <title>LEGO</title>
 
   <!-- BOOTSTRAP THEME -->
-  <link rel="stylesheet" href="../static/bootstrap.min.css"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}"/>
 </head>
+
 <body>
+
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark">
+
     <a class="navbar-brand" href="/"
     ><img
     height="35"
@@ -21,6 +24,7 @@
     title="LEGO-Logo"
     alt="Startseite"
     /></a>
+
     <button
     class="navbar-toggler"
     type="button"
@@ -61,40 +65,48 @@
       </button>
     </form>
   </div>
+
 </nav>
 
 {% block content %}{% endblock %}
 
 <!-- FOOTER -->
 <div class="p-5 text-black">
-  <a class="navbar-brand" href="index.html"
+
+  <a class="navbar-brand" href="/"
   ><img
   height="35"
   width="35"
   class="aem--svgImg"
   src="{{ url_for('static', filename='images/lego-Logo.jpg') }}"
-  title="LEGO-logo"
+  title="LEGO-Logo"
   alt="Startseite"
+
   /></a>
   ©2020 The LEGO Group. All rights reserved. Use of this site signifies your
   agreement to the terms of use.
 </div>
+
 <!-- CUSTOM SCRIPTS -->
 <script
 src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 crossorigin="anonymous"
 ></script>
+
 <script
 src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 crossorigin="anonymous"
 ></script>
+
 <script
 src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
 integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
 crossorigin="anonymous"
 ></script>
+
 <script src="../static/scripts.js"></script>
+
 </body>
 </html>

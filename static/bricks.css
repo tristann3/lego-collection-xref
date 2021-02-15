@@ -75,8 +75,8 @@ body {
 
 @media (min-width: 992px) {
   .col-lg-10 {
-      flex: 0 0 51%;
-      max-width: 51%;
-      display:inline-block;
-}
+    flex: 0 0 51%;
+    max-width: 51%;
+    display:inline-block;
+  }
 }
