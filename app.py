@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 lego_collection = mongo.db.legos
 
 ############################################################
-# ROUTES
+# MAIN ROUTES
 ############################################################
 
 @app.route('/')
@@ -31,9 +31,15 @@ def login():
 @app.route('/account')
 def account():
 
+  # returns every lego brick in our collection
+  legos_to_show = lego_collection.find({})
+
   context = {
+    'legos': legos_to_show,
     "loggedIn": True
   }
+
+  # renders account.html (our user's database)
   return render_template('account.html', **context)
 
 @app.route('/sets')
@@ -44,6 +50,9 @@ def sets():
 def bricks():
   return render_template('bricks.html')
 
+############################################################
+# DATABASE ROUTES (currently only modifies bricks-list)
+############################################################
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
@@ -59,11 +68,11 @@ def add():
         }
         returned_obj = lego_collection.insert_one(new_lego)
 
-        return redirect(url_for('detail', lego_id=returned_obj.inserted_id))
+        return redirect(url_for('account', lego_id=returned_obj.inserted_id))
 
     else:
-        # for when we move our FEW into a template
-        return render_template('add.html')
+        # redirects to account.html (our user's database)
+        return render_template('account.html')
 
 @app.route('/delete/<lego_id>', methods=['POST'])
 def delete(lego_id):
@@ -71,8 +80,20 @@ def delete(lego_id):
 
     lego_collection.delete_one({'_id': ObjectId(lego_id)})
 
-    # for when we move our FEW into a template
-    return redirect(url_for('legos_list'))
+    # redirects to account.html (our user's database)
+    return redirect(url_for('account'))
+
+@app.route('/update/<lego_id>', methods=['POST'])
+def update(lego_id):
+  """ Updates lego """
+
+  # currently only updates one lego brick at a time (for if we want individual update buttons)
+  lego_collection.update_one({'_id': ObjectId(lego_id)}),{'$set': {
+    'quantity': request.form.get('quantity')
+    }}
+
+  # redirects to account.html (our user's database)
+  return redirect(url_for('account'))
 
 if __name__ == '__main__':
   app.run(debug=True)
