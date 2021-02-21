@@ -1,6 +1,6 @@
 {% block context %}
 
-<link rel="stylesheet" href="../static/bricks.css" />
+<link rel="stylesheet" href="{{ url_for('static', filename='bricks.css') }}" />
 
 <main>
   <!-- CARDS -->
@@ -9,72 +9,95 @@
       <div class="col-lg-6 offset-lg-3"></div>
     </div>
   </div>
+
   <h1 style="text-align: center">LEGO BRICKS</h1>
+
   <div class="row">
     <div id="architecture"></div>
-    <div class="col-lg-4">
-      <img
-        src="{{ url_for('static', filename='images/brick1x1.jpg') }}"
-        class="img-fluid rounded"
-      />
+
+    <!-- Dynamic code to display all bricks -->
+    <!-- {% for brick in bricks_list %}
+    <div class="col-lg-10">
+      <img src="{{ url_for('static', filename='{{brick.photo_url}}') }}" class="img-fluid rounded"/>
+      <h3>{{brick.name}}</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
+    </div>
+    {% endfor %} -->
+
+    <div class="col-lg-10">
+      <img src="{{ url_for('static', filename='images/brick1x1.jpg') }}" class="img-fluid rounded"/>
       <h3>Brick 1 X 1</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
     </div>
-    <div class="col-lg-4">
-      <img
-        src="{{ url_for('static', filename='images/brick1x2.jpg') }}"
-        class="img-fluid rounded"
-      />
+
+    <div class="col-lg-10">
+      <img src="{{ url_for('static', filename='images/brick1x2.jpg') }}" class="img-fluid rounded"/>
       <h3>Brick 1 X 2</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
     </div>
-    <div class="col-lg-4">
-      <img
-        src="{{ url_for('static', filename='images/brick2x2.jpg') }}"
-        class="img-fluid rounded"
-      />
+
+    <div class="col-lg-10">
+      <img src="{{ url_for('static', filename='images/brick2x2.jpg') }}" class="img-fluid rounded"/>
       <h3>Brick 2 X 2</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
     </div>
-    <div class="col-lg-4">
-      <img
-        src="{{ url_for('static', filename='images/plate1x1.jpg') }}"
-        class="img-fluid rounded"
-      />
+
+    <div class="col-lg-10">
+      <img src="{{ url_for('static', filename='images/plate1x1.jpg') }}" class="img-fluid rounded"/>
       <h3>Plate 1 X 1</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
     </div>
-    <div class="col-lg-4">
-      <img
-        src="{{ url_for('static', filename='images/plate1x2.jpg') }}"
-        class="img-fluid rounded"
-      />
+
+    <div class="col-lg-10">
+      <img src="{{ url_for('static', filename='images/plate1x2.jpg') }}" class="img-fluid rounded"/>
       <h3>Plate 1 X 2</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
     </div>
-    <div class="col-lg-4">
-      <img
-        src="{{ url_for('static', filename='images/plate1x3.jpg') }}"
-        class="img-fluid rounded"
-      />
+
+    <div class="col-lg-10">
+      <img src="{{ url_for('static', filename='images/plate1x3.jpg') }}" class="img-fluid rounded"/>
       <h3>Plate 1 X 3</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
     </div>
-    <div class="col-lg-4">
-      <img
-        src="{{ url_for('static', filename='images/rims.jpg') }}"
-        class="img-fluid rounded"
-      />
-      <h3>Rims</h3>
+
+    <div class="col-lg-10">
+      <img src="{{ url_for('static', filename='images/rims.jpg') }}" class="img-fluid rounded"/>
+      <h3>Rims 1 X 1</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
     </div>
-    <div class="col-lg-4">
-      <img
-        src="{{ url_for('static', filename='images/tires.jpg') }}"
-        class="img-fluid rounded"
-      />
-      <h3>Tires</h3>
+
+    <div class="col-lg-10">
+      <img src="{{ url_for('static', filename='images/tires.jpg') }}" class="img-fluid rounded"/>
+      <h3>Tires 1 X 1</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
     </div>
-    <div class="col-lg-4">
-      <img
-        src="{{ url_for('static', filename='images/motor.jpg') }}"
-        class="img-fluid rounded"
-      />
-      <h3>Motor</h3>
+
+    <div class="col-lg-10">
+      <img src="{{ url_for('static', filename='images/motor.jpg') }}" class="img-fluid rounded"/>
+      <h3>Motor 1 X 1</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
     </div>
+
   </div>
 </main>
 
