@@ -46,28 +46,24 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login">ACCOUNT</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/about">ABOUT</a>
           </li>
+          {% if current_user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="/sets">LEGO SETS</a>
+            <a class="nav-link" href="/sets">SETS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/bricks">LEGO BRICKS</a>
+            <a class="nav-link" href="/bricks">BRICKS</a>
           </li>
+          {% else %}
+          <li>
+            <a class="nav-link" href="/login">LOGIN</a>
+          </li>
+          <li>
+            <a class="nav-link" href="/signup">SIGN UP</a>
+          </li>
+          {% endif %}
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input
-            class="form-control mr-sm-2"
-            type="text"
-            placeholder="SEARCH"
-          />
-          <button class="btn btn-secondary\\\ my-2 my-sm-0" type="submit">
-            GO
-          </button>
-        </form>
       </div>
     </nav>
 

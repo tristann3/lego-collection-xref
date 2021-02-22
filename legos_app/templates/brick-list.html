@@ -15,16 +15,17 @@
   <div class="row">
     <div id="architecture"></div>
 
+    
     <!-- Dynamic code to display all bricks -->
-    <!-- {% for brick in bricks_list %}
+    {% for brick in bricks_list %}
     <div class="col-lg-10">
-      <img src="{{ url_for('static', filename='{{brick.photo_url}}') }}" class="img-fluid rounded"/>
+      <img src="{{ url_for('static', filename='images/{{brick.photo_url}}') }}" class="img-fluid rounded"/>
       <h3>{{brick.name}}</h3>
       <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
       <a href="#" class="btn btn-primary">SAVE</a>
       <a href="#" class="btn btn-primary">REMOVE</a>
     </div>
-    {% endfor %} -->
+    {% endfor %}
 
     <div class="col-lg-10">
       <img src="{{ url_for('static', filename='images/brick1x1.jpg') }}" class="img-fluid rounded"/>
