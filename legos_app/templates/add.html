@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+    <h1>New Brick</h1>
+
+    <form method='POST'>
+        <fieldset>
+            <legend>Please fill out your Bricks info:</legend>
+            <label>
+                Brick name:
+                <input type="text" name="brick_name">
+            </label>
+            <label>
+                Brick ID:
+                <input type="text" name="brick_ID">
+            </label>
+            <label>
+                Quantity:
+                <input type="number" name="photo">
+            </label>
+            <label>
+                Brick photo URL:
+                <input type="text" name="photo">
+            </label>
+            <input href="/bricks/add" type="submit" class="submit" value="Submit!">
+        </fieldset>
+    </form>
+</main>
+
+{% endblock content %}
