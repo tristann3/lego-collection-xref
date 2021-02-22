@@ -59,8 +59,9 @@ def add():
         db.session.add(new_brick)
         db.session.commit()
 
+        # redirects to bricks.html (our user's database)
         return redirect(url_for("main.bricks"))
-        # redirects to account.html (our user's database)
+    # returns add-brick form
     return render_template('add.html', form=form)
 
 @main.route('/delete/<lego_id>', methods=['POST'])
@@ -68,10 +69,11 @@ def add():
 def delete(lego_id):
     """ Deletes lego """
 
-    lego_collection.delete_one({'_id': ObjectId(lego_id)})
-
-    # redirects to account.html (our user's database)
-    return redirect(url_for('account'))
+    item = LegoBrick.query.get(lego_id)
+    db.session.delete(item)
+    db.session.commit()
+    # redirects to bricks.html (our user's database)
+    return redirect(url_for("main.bricks"))
 
 @main.route('/update/<lego_id>', methods=['POST'])
 @login_required
@@ -79,12 +81,13 @@ def update(lego_id):
   """ Updates lego """
 
   # currently only updates one lego brick at a time (for if we want individual update buttons)
-  lego_collection.update_one({'_id': ObjectId(lego_id)}),{'$set': {
-    'quantity': request.form.get('quantity')
-    }}
+  item = LegoBrick.query.get(lego_id)
+  form.populate_obj(item)
+  db.session.add(item)
+  db.session.commit()
 
-  # redirects to account.html (our user's database)
-  return redirect(url_for('account'))
+  # redirects to bricks.html (our user's database)
+  return redirect(url_for("main.bricks"))
 
 if __name__ == '__main__':
   app.run(debug=True)
