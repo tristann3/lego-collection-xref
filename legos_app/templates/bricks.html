@@ -21,11 +21,15 @@
       <img src="static/images/{{brick.photo_url}}" class="img-fluid rounded"/>
       <h3>{{brick.name}}</h3>
       <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
-      <a href="#" class="btn btn-primary">SAVE</a>
-      <a href="#" class="btn btn-primary">REMOVE</a>
+      <a href="bricks/update/{{brick.id}}" class="btn btn-primary">SAVE</a>
+      <a href="/bricks/delete/{{brick.id}}" class="btn btn-primary">REMOVE</a>
     </div>
     {% endfor %}
 
+  </div>
+
+  <div class="jumbotron text-center mb-0">
+    <a href="/bricks/add" class="btn btn-primary">ADD ITEM</a>
   </div>
 </main>
 
