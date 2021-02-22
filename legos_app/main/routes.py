@@ -44,7 +44,7 @@ def bricks():
 
 @main.route('/bricks/add', methods=['GET', 'POST'])
 @login_required
-def add():
+def add_brick():
     """Route to create and add a LEGO brick to the user's collection"""
     form = LegoBrickForm()
     

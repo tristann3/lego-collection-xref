@@ -5,7 +5,7 @@
 
 <main>
     <h1>New Brick</h1>
-    <form method="POST" action="{{ url_for('main.add') }}">
+    <form method="POST" action="{{ url_for('main.add_brick') }}">
       {{ form.csrf_token }}
       <fieldset>
         <legend>Please fill out your Bricks info:</legend>
