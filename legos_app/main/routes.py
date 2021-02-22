@@ -61,7 +61,7 @@ def add_brick():
 
         return redirect(url_for("main.bricks"))
         # redirects to account.html (our user's database)
-    return render_template('add.html', form=form)
+    return render_template('add-brick.html', form=form)
 
 @main.route('/delete/<lego_id>', methods=['POST'])
 @login_required
