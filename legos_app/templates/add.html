@@ -25,6 +25,42 @@
             <input href="/bricks/add" type="submit" class="submit" value="Submit!">
         </fieldset>
     </form>
+    <form method="POST" action="{{ url_for('main.add') }}">
+      {{ form.csrf_token }}
+      <fieldset>
+        <legend>Please fill out your Bricks info:</legend>
+    
+        {{ form.name.label }} {{ form.name }}
+        <ul>
+          {% for error in form.name.errors %}
+          <li class="error">{{ error }}</li>
+          {% endfor %}
+        </ul>
+    
+        {{ form.brick_id.label }} {{ form.brick_id }}
+        <ul>
+          {% for error in form.brick_id.errors %}
+          <li class="error">{{ error }}</li>
+          {% endfor %}
+        </ul>
+
+        {{ form.quantity.label }} {{ form.quantity }}
+        <ul>
+          {% for error in form.quantity.errors %}
+          <li class="error">{{ error }}</li>
+          {% endfor %}
+        </ul>
+
+        {{ form.photo_url.label }} {{ form.photo_url }}
+        <ul>
+          {% for error in form.photo_url.errors %}
+          <li class="error">{{ error }}</li>
+          {% endfor %}
+        </ul>
+    
+        {{ form.submit }}
+      </fieldset>
+    </form>
 </main>
 
 {% endblock content %}

@@ -16,7 +16,7 @@ main = Blueprint("main", __name__)
 # MAIN ROUTES
 ############################################################
 
-@app.route('/about')
+@main.route('/about')
 def about():
   return render_template('about.html')
 
@@ -25,7 +25,7 @@ def homepage():
     '''Homepage route'''
     return render_template('index.html')
 
-@app.route('/account')
+@main.route('/account')
 def account():
 
   # returns every lego brick in our collection
@@ -39,39 +39,42 @@ def account():
   # renders account.html (our user's database)
   return render_template('account.html', **context)
 
-@app.route('/sets')
+@main.route('/sets')
 def sets():
   return render_template('sets.html')
 
-@app.route('/bricks')
+@main.route('/bricks')
 def bricks():
-  return render_template('bricks.html')
+  brick_list = LegoBrick.query.all()
+  for brick in brick_list:
+    print(brick.photo_url)
+  return render_template('bricks.html', brick_list=brick_list)
 
 ############################################################
 # DATABASE ROUTES (currently only modifies bricks-list)
 ############################################################
 
-@app.route('/add', methods=['GET', 'POST'])
+@main.route('/bricks/add', methods=['GET', 'POST'])
 def add():
-    """Display the lego add page & process data from the add form."""
+    """Route to create and add a LEGO brick to the user's collection"""
+    form = LegoBrickForm()
+    
+    # if form was submitted and contained no errors
+    if form.validate_on_submit():
+        new_brick = LegoBrick(
+          name=form.name.data,
+          brick_id=form.brick_id.data,
+          quantity=form.quantity.data,
+          photo_url=form.photo_url.data,
+        )
+        db.session.add(new_brick)
+        db.session.commit()
 
-    if request.method == 'POST':
-        new_lego = {
-            'name': request.form.get('lego_name'),
-            'model_number': request.form.get('model_number'),
-            'model_name': request.form.get('model_name'),
-            'photo_url': request.form.get('photo'),
-            'quantity': request.form.get('quantity')
-        }
-        returned_obj = lego_collection.insert_one(new_lego)
-
-        return redirect(url_for('account', lego_id=returned_obj.inserted_id))
-
-    else:
+        return redirect(url_for("main.bricks"))
         # redirects to account.html (our user's database)
-        return render_template('account.html')
+    return render_template('add.html', form=form)
 
-@app.route('/delete/<lego_id>', methods=['POST'])
+@main.route('/delete/<lego_id>', methods=['POST'])
 def delete(lego_id):
     """ Deletes lego """
 
@@ -80,7 +83,7 @@ def delete(lego_id):
     # redirects to account.html (our user's database)
     return redirect(url_for('account'))
 
-@app.route('/update/<lego_id>', methods=['POST'])
+@main.route('/update/<lego_id>', methods=['POST'])
 def update(lego_id):
   """ Updates lego """
 

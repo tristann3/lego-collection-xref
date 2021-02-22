@@ -2,13 +2,31 @@
 
 <link rel="stylesheet" href="{{ url_for('static', filename='bricks.css') }}" />
 
-{% include 'brick-list.html' %}
+<main>
+  <!-- CARDS -->
+  <div class="container mb-5px mt-5px">
+    <div class="row m-5">
+      <div class="col-lg-6 offset-lg-3"></div>
+    </div>
+  </div>
 
-<!-- CALL TO ACTION -->
-<div class="jumbotron text-center mb-0">
-  <a href="/account" class="btn btn-primary">PROCEED TO ACCOUNT</a>
-</div>
+  <h1 style="text-align: center">LEGO BRICKS</h1>
 
+  <div class="row">
+    <div id="architecture"></div>
+
+    <!-- Dynamic code to display all bricks -->
+    {% for brick in brick_list %}
+    <div class="col-lg-10">
+      <img src="static/images/{{brick.photo_url}}" class="img-fluid rounded"/>
+      <h3>{{brick.name}}</h3>
+      <input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="" inputmode="">
+      <a href="#" class="btn btn-primary">SAVE</a>
+      <a href="#" class="btn btn-primary">REMOVE</a>
+    </div>
+    {% endfor %}
+
+  </div>
 </main>
 
 {% endblock %}
