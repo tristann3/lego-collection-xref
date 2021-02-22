@@ -25,25 +25,13 @@ def homepage():
     '''Homepage route'''
     return render_template('index.html')
 
-@main.route('/account')
-def account():
-
-  # returns every lego brick in our collection
-  legos_to_show = lego_collection.find({})
-
-  context = {
-    'legos': legos_to_show,
-    "loggedIn": True
-  }
-
-  # renders account.html (our user's database)
-  return render_template('account.html', **context)
-
 @main.route('/sets')
+@login_required
 def sets():
   return render_template('sets.html')
 
 @main.route('/bricks')
+@login_required
 def bricks():
   brick_list = LegoBrick.query.all()
   for brick in brick_list:
@@ -55,6 +43,7 @@ def bricks():
 ############################################################
 
 @main.route('/bricks/add', methods=['GET', 'POST'])
+@login_required
 def add():
     """Route to create and add a LEGO brick to the user's collection"""
     form = LegoBrickForm()
@@ -75,6 +64,7 @@ def add():
     return render_template('add.html', form=form)
 
 @main.route('/delete/<lego_id>', methods=['POST'])
+@login_required
 def delete(lego_id):
     """ Deletes lego """
 
@@ -84,6 +74,7 @@ def delete(lego_id):
     return redirect(url_for('account'))
 
 @main.route('/update/<lego_id>', methods=['POST'])
+@login_required
 def update(lego_id):
   """ Updates lego """
 
