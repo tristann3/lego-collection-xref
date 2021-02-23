@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='bricks.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
 
 <main>
-    <h1>New Brick</h1>
+    <h1>NEW BRICK</h1>
     <form method="POST" action="{{ url_for('main.add_brick') }}">
       {{ form.csrf_token }}
       <fieldset>
-        <legend>Please fill out your Bricks info:</legend>
+        <legend>PLEASE FILL OUT YOUR BRICK INFORMATION</legend>
     
         {{ form.name.label }} {{ form.name }}
         <ul>

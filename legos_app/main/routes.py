@@ -47,7 +47,7 @@ def bricks():
 def add_brick():
     """Route to create and add a LEGO brick to the user's collection"""
     form = LegoBrickForm()
-    
+
     # if form was submitted and contained no errors
     if form.validate_on_submit():
         new_brick = LegoBrick(

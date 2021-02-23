@@ -1,13 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
 
-<h1>Sign Up</h1>
+<h1>SIGN UP</h1>
 
 <form action="/signup" method="POST">
   {{ form.csrf_token }}
   <fieldset>
+    <legend>PLEASE ENTER YOUR CREDENTIALS</legend>
       {{ form.username.label }}
       {{ form.username }}
       <ul>
