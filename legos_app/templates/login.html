@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+
+<h1>LOG IN</h1>
+
+<form action="/login" method="POST">
+  {{ form.csrf_token }}
+  <fieldset>
+      <legend>PLEASE ENTER YOUR CREDENTIALS</legend>
+
+      {{ form.username.label }}
+      {{ form.username }}
+      <ul>
+      {% for error in form.username.errors %}
+          <li class="error">{{ error }}</li>
+      {% endfor %}
+      </ul>
+
+      {{ form.password.label }}
+      {{ form.password }}
+      <ul>
+      {% for error in form.password.errors %}
+          <li class="error">{{ error }}</li>
+      {% endfor %}
+      </ul>
+
+      {{ form.submit }}
+  </fieldset>
+</form>
+
+
+{% endblock %}
