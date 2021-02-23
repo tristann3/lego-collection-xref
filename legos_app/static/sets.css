@@ -72,3 +72,9 @@ body {
   height: auto;
   padding-top: 100px;
 }
+
+.rounded {
+  border-radius: .25rem!important;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}

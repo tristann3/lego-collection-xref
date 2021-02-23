@@ -1,57 +1,65 @@
 .separator-type, .title-type, .intro-type, .content-type .intro-type p {
-    position: relative;
+  position: relative;
 }
+
 .intro-type .container {
-    padding: 107px 0px 102px 0px !important;
+  padding: 107px 0px 102px 0px !important;
 }
+
 #product-header-section, .intro-type .container {
-    padding: 68px 15px 72px !important;
+  padding: 68px 15px 72px !important;
 }
+
 .container {
-    width: 1630px;
-    
+  width: 1630px;
 }
 .parallax {
-    background-attachment: inherit !important;
-    background-repeat: repeat;
-    background-size: cover;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    width: 100%;
-    z-index: -10;
+  background-attachment: inherit !important;
+  background-repeat: repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  z-index: -10;
 }
+
 .company-heading h1 {
-    margin-bottom: 40px;
-    line-height: 80px;
-    color: whitesmoke;
-    font-weight: 700 !important;
-    text-align: center; 
+  margin-bottom: 40px;
+  line-height: 80px;
+  color: whitesmoke;
+  font-weight: 700 !important;
+  text-align: center;
 }
+
 .seo-header, .product-header, .intro-type .container h1.white, .company-heading h1 {
-    font-family: 'Raleway', sans-serif;
-    font-weight: 100 !important;
-    text-transform: capitalize;
-    font-size: 65px;
-    margin-bottom: 20px;
-    
+  font-family: 'Raleway', sans-serif;
+  font-weight: 100 !important;
+  text-transform: capitalize;
+  font-size: 65px;
+  margin-bottom: 20px;
 }
+
 .company-sections h2, .careers-sections h2, .perks-section h2 {
-    font-weight: 800;
-    font-size: 50px;
+  font-weight: 800;
+  font-size: 50px;
 }
+
 .red-border {
-    width: 50%;
-    border-bottom: 4px solid tan;
-    margin: 0 auto;
-    height: 12px;
+  width: 50%;
+  border-bottom: 4px solid tan;
+  margin: 0 auto;
+  height: 12px;
 }
+
 .company-sections p {
-    margin-top: 20px;
+  margin-top: 20px;
 }
+
 .ct-u-size22 {
-    font-size: 22px;  
+  font-size: 22px;
 }
+
 .ct-u-paddingBoth100 {
-    padding: 100px 15px;
+  padding: 100px 15px;
 }
