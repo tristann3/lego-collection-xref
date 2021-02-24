@@ -1,34 +1,33 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
+<div class="d-flex flex-column min-vh-100">
+  <div class="flex-fill">
+    <h1>LOG IN</h1>
 
-<h1>LOG IN</h1>
+    <form action="/login" method="POST">
+      {{ form.csrf_token }}
+      <fieldset>
+        <legend>PLEASE ENTER YOUR CREDENTIALS</legend>
 
-<form action="/login" method="POST">
-  {{ form.csrf_token }}
-  <fieldset>
-      <legend>PLEASE ENTER YOUR CREDENTIALS</legend>
-
-      {{ form.username.label }}
-      {{ form.username }}
-      <ul>
-      {% for error in form.username.errors %}
+        {{ form.username.label }} {{ form.username }}
+        <ul>
+          {% for error in form.username.errors %}
           <li class="error">{{ error }}</li>
-      {% endfor %}
-      </ul>
+          {% endfor %}
+        </ul>
 
-      {{ form.password.label }}
-      {{ form.password }}
-      <ul>
-      {% for error in form.password.errors %}
+        {{ form.password.label }} {{ form.password }}
+        <ul>
+          {% for error in form.password.errors %}
           <li class="error">{{ error }}</li>
-      {% endfor %}
-      </ul>
+          {% endfor %}
+        </ul>
 
-      {{ form.submit }}
-  </fieldset>
-</form>
-
+        {{ form.submit }}
+      </fieldset>
+    </form>
+  </div>
+</div>
 
 {% endblock %}
