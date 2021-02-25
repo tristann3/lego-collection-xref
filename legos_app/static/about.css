@@ -24,6 +24,18 @@
   z-index: -10;
 }
 
+.navbar {
+  padding 1rem;
+  background-color: #FFCC00;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #000000;
+}
+
+.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
+  color: #000000;
+}
 .company-heading h1 {
   margin-bottom: 40px;
   line-height: 80px;
