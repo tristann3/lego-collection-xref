@@ -28,7 +28,7 @@
         <fieldset>
 
             {{ form.quantity.label }}
-            {{ form.quantity }}
+            {{ form.quantity(value=brick.quantity) }}
                 
             <input type="submit" value="SAVE" class="btn btn-primary">
         </fieldset>
