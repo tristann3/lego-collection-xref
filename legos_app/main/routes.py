@@ -86,5 +86,35 @@ def update(lego_id):
   # redirects to account.html (our user's database)
   return redirect(url_for('account'))
 
+@main.route('/sets/add', methods=['GET', 'POST'])
+@login_required
+def add_set():
+    """Route to create and add a LEGO set to the user's collection"""
+    form = LegoSetForm()
+
+    # if form was submitted and contained no errors
+    if form.validate_on_submit():
+        new_set = LegoSet(
+          name=form.name.data,
+          set_id=form.set_id.data,
+          photo_url=form.photo_url.data,
+        )
+        db.session.add(new_set)
+        db.session.commit()
+
+        return redirect(url_for("main.bricks"))
+        # redirects to account.html (our user's database)
+    return render_template('add-set.html', form=form)
+
+@main.route('/delete/<lego_set_id>', methods=['POST'])
+@login_required
+def delete_set(lego_set_id):
+    """ Deletes set """
+
+
+    # redirects to account.html (our user's database)
+    return redirect(url_for('account'))
+
+
 if __name__ == '__main__':
   app.run(debug=True)
