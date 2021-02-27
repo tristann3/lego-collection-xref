@@ -43,10 +43,10 @@ def bricks():
 
 @main.route('/bricks/add', methods=['GET', 'POST'])
 @login_required
-def add():
+def add_brick():
     """Route to create and add a LEGO brick to the user's collection"""
     form = LegoBrickForm()
-    
+
     # if form was submitted and contained no errors
     if form.validate_on_submit():
         new_brick = LegoBrick(
@@ -58,10 +58,9 @@ def add():
         db.session.add(new_brick)
         db.session.commit()
 
-        # redirects to bricks.html (our user's database)
-        return redirect(url_for("main.bricks", lego_id=new_brick.id))
-    # returns add-brick form
-    return render_template('add.html', form=form)
+        return redirect(url_for("main.bricks"))
+        # redirects to account.html (our user's database)
+    return render_template('add-brick.html', form=form)
 
 @main.route('/bricks/delete/<lego_id>', methods=['POST'])
 @login_required

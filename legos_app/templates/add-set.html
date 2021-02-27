@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='bricks.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
 
 <main>
-    <h1>New Brick</h1>
-    <form method="POST" action="{{ url_for('main.add') }}">
+    <h1>NEW SET</h1>
+    <form method="POST" action="{{ url_for('main.add_set') }}">
       {{ form.csrf_token }}
       <fieldset>
-        <legend>Please fill out your Bricks info:</legend>
+        <legend>PLEASE FILL OUT YOUR SET INFORMATION</legend>
     
         {{ form.name.label }} {{ form.name }}
         <ul>
@@ -17,13 +17,6 @@
           {% endfor %}
         </ul>
     
-        {{ form.brick_id.label }} {{ form.brick_id }}
-        <ul>
-          {% for error in form.brick_id.errors %}
-          <li class="error">{{ error }}</li>
-          {% endfor %}
-        </ul>
-
         {{ form.quantity.label }} {{ form.quantity }}
         <ul>
           {% for error in form.quantity.errors %}
