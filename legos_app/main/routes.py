@@ -28,7 +28,8 @@ def homepage():
 @main.route('/sets')
 @login_required
 def sets():
-  return render_template('sets.html')
+  set_list = LegoSet.query.all()
+  return render_template('sets.html', set_list=set_list)
 
 @main.route('/bricks')
 @login_required
@@ -57,9 +58,9 @@ def add_brick():
         )
         db.session.add(new_brick)
         db.session.commit()
-
+        # redirects to bricks.html (our user's database)
         return redirect(url_for("main.bricks"))
-        # redirects to account.html (our user's database)
+    # returns add-brick form
     return render_template('add-brick.html', form=form)
 
 @main.route('/bricks/delete/<lego_id>', methods=['POST'])
@@ -107,20 +108,21 @@ def add_set():
         )
         db.session.add(new_set)
         db.session.commit()
-
-        return redirect(url_for("main.bricks"))
-        # redirects to account.html (our user's database)
+        # redirects to .html (our user's database)
+        return redirect(url_for("main.sets"))
+    # returns add-set form
     return render_template('add-set.html', form=form)
 
-@main.route('/delete/<lego_set_id>', methods=['POST'])
+@main.route('/sets/delete/<lego_set_id>', methods=['POST'])
 @login_required
 def delete_set(lego_set_id):
     """ Deletes set """
 
-
-    # redirects to account.html (our user's database)
-    return redirect(url_for('account'))
-
+    set_item = LegoSet.query.get(lego_set_id)
+    db.session.delete(set_item)
+    db.session.commit()
+    # redirects to sets.html (our user's database)
+    return redirect(url_for("main.sets"))
 
 if __name__ == '__main__':
   app.run(debug=True)
