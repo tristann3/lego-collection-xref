@@ -8,37 +8,55 @@
     <form method="POST" action="{{ url_for('main.add_brick') }}">
       {{ form.csrf_token }}
       <fieldset>
-        <legend>PLEASE FILL OUT YOUR BRICK INFORMATION</legend>
-    
-        {{ form.name.label }} {{ form.name }}
-        <ul>
-          {% for error in form.name.errors %}
-          <li class="error">{{ error }}</li>
-          {% endfor %}
-        </ul>
-    
-        {{ form.brick_id.label }} {{ form.brick_id }}
-        <ul>
-          {% for error in form.brick_id.errors %}
-          <li class="error">{{ error }}</li>
-          {% endfor %}
-        </ul>
+        <legend style="text-align: center">PLEASE FILL OUT YOUR BRICK INFORMATION</legend>
 
-        {{ form.quantity.label }} {{ form.quantity }}
-        <ul>
-          {% for error in form.quantity.errors %}
-          <li class="error">{{ error }}</li>
-          {% endfor %}
-        </ul>
-
-        {{ form.photo_url.label }} {{ form.photo_url }}
-        <ul>
-          {% for error in form.photo_url.errors %}
-          <li class="error">{{ error }}</li>
-          {% endfor %}
-        </ul>
-    
-        {{ form.submit }}
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              {{ form.name.label }} {{ form.name }}
+              <ul>
+                {% for error in form.name.errors %}
+                <li class="error">{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              {{ form.brick_id.label }} {{ form.brick_id }}
+              <ul>
+                {% for error in form.brick_id.errors %}
+                <li class="error">{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              {{ form.quantity.label }} {{ form.quantity }}
+              <ul>
+                {% for error in form.quantity.errors %}
+                <li class="error">{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              {{ form.photo_url.label }} {{ form.photo_url }}
+              <ul>
+                {% for error in form.photo_url.errors %}
+                <li class="error">{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              {{ form.submit }}
+            </div>
+          </div>
+        </div> 
       </fieldset>
     </form>
 </main>
