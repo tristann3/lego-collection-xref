@@ -19,18 +19,20 @@
     <!-- Dynamic code to display all sets -->
     {% for set in set_list %}
     <div class="col-lg-4">
-      <img src="{{ set.photo_url }}" class="img-fluid rounded"/>
+      <img src="{{ set.photo_url }}" class="img-fluid rounded" />
       <h3>{{set.name}}</h3>
       <!-- Removed set instruction functionality -->
       <!-- <a href="{{set.instructions_url}}" class="btn btn-primary">SEE BUILDING INSTRUCTIONS</a> -->
-      <form method="POST" action="{{ url_for('main.delete_set', lego_set_id=set.id) }}">
-        <input type="submit" value="REMOVE" class="btn btn-primary">
+      <form method="POST" action="{{ url_for('main.delete_set', lego_set_id=set.id) }}" >
+        <input type="submit" value="REMOVE" class="btn btn-primary" />
       </form>
     </div>
     {% endfor %}
 
-<div class="jumbotron text-center mb-0">
-  <a href="/sets/add" class="btn btn-primary">ADD ITEM</a>
-</div>
+    <div class="jumbotron text-center mb-0">
+      <a href="/sets/add" class="btn btn-primary">ADD ITEM</a>
+    </div>
+  </div>
+</main>
 
 {% endblock %}
