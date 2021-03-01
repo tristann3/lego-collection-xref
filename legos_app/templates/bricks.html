@@ -3,39 +3,31 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='bricks.css') }}" />
 
 <main>
-  <!-- CARDS -->
-  <div class="container mb-5px mt-5px">
-    <div class="row m-5">
-      <div class="col-lg-6 offset-lg-3"></div>
-    </div>
-  </div>
-
-  <h1 style="text-align: center">LEGO BRICKS</h1>
+  <h1 class="my-5" style="text-align: center">LEGO BRICKS</h1>
 
   <div class="row">
-    <div id="architecture"></div>
-
     <!-- Dynamic code to display all bricks -->
     {% for brick in brick_list %}
-    <div class="col-lg-10">
-      <!-- Does not access static images (accesses user inputted images) -->
-      <img src="{{ brick.photo_url }}" class="img-fluid rounded"/>
+    <div class="col-lg-10 offset-lg-1">
+      <img src="{{ brick.photo_url }}" class="img-fluid rounded" width="60" height="60"/>
       <h3>{{ brick.name }}</h3>
-      <!-- PLACE THESE FORMS INTO A CONTAINER TO FIX FORMATING ISSUE -->
-      <form method="POST" action="{{ url_for('main.update', lego_id=brick.id) }}">
-        <!-- <input type="number" step="1" min="1" max="" name="quantity" value="{{ brick.quantity }}" title="Qty" class="input-text qty text" size="4" pattern="" inputmode=""> -->
-        {{ form.csrf_token }}
-        <fieldset>
+      <div class="row">
+        <form method="POST" action="{{ url_for('main.update', lego_id=brick.id) }}">
+          {{ form.csrf_token }}
+          <fieldset>
 
-            {{ form.quantity.label }}
-            {{ form.quantity(value=brick.quantity) }}
-                
-            <input type="submit" value="SAVE" class="btn btn-primary">
-        </fieldset>
-      </form>
-      <form method="POST" action="{{ url_for('main.delete', lego_id=brick.id) }}">
-        <input type="submit" value="REMOVE" class="btn btn-primary">
-      </form>
+              {{ form.quantity.label }}
+              {{ form.quantity(value=brick.quantity) }}
+                  
+              <input type="submit" value="SAVE" class="btn btn-primary">
+              
+          </fieldset>
+        </form>
+        <form class="mx-2" method="POST" action="{{ url_for('main.delete', lego_id=brick.id) }}">
+          <input type="submit" value="REMOVE" class="btn btn-primary">
+        </form>
+      </div>
+      
     </div>
     {% endfor %}
 

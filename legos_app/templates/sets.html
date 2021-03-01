@@ -5,21 +5,15 @@
 <!-- THE FOOTER BREAKS WHEN A ROW OF 3 SETS ARE NOT CREATED -->
 
 <main>
-  <!-- CARDS -->
-  <div class="container mb-5px mt-5px">
-    <div class="row m-5">
-      <div class="col-lg-6 offset-lg-3"></div>
-    </div>
-  </div>
 
-  <h1 style="text-align: center">LEGO SETS</h1>
+  <h1 class="my-5" style="text-align: center">LEGO SETS</h1>
   <div class="row">
     <div id="architecture"></div>
 
     <!-- Dynamic code to display all sets -->
     {% for set in set_list %}
     <div class="col-lg-4">
-      <img src="{{ set.photo_url }}" class="img-fluid rounded" />
+      <img src="{{ set.photo_url }}" width="300" height="300"/>
       <h3>{{set.name}}</h3>
       <!-- Removed set instruction functionality -->
       <!-- <a href="{{set.instructions_url}}" class="btn btn-primary">SEE BUILDING INSTRUCTIONS</a> -->
@@ -28,10 +22,9 @@
       </form>
     </div>
     {% endfor %}
-
-    <div class="jumbotron text-center mb-0">
-      <a href="/sets/add" class="btn btn-primary">ADD ITEM</a>
-    </div>
+  </div>
+  <div class="jumbotron text-center mb-0">
+    <a href="/sets/add" class="btn btn-primary">ADD ITEM</a>
   </div>
 </main>
 
