@@ -8,30 +8,45 @@
     <form method="POST" action="{{ url_for('main.add_set') }}">
       {{ form.csrf_token }}
       <fieldset>
-        <legend>PLEASE FILL OUT YOUR SET INFORMATION</legend>
+        <legend style="text-align: center">PLEASE FILL OUT YOUR SET INFORMATION</legend>
     
-        {{ form.name.label }} {{ form.name }}
-        <ul>
-          {% for error in form.name.errors %}
-          <li class="error">{{ error }}</li>
-          {% endfor %}
-        </ul>
-    
-        {{ form.set_id.label }} {{ form.set_id }}
-        <ul>
-          {% for error in form.set_id.errors %}
-          <li class="error">{{ error }}</li>
-          {% endfor %}
-        </ul>
-
-        {{ form.photo_url.label }} {{ form.photo_url }}
-        <ul>
-          {% for error in form.photo_url.errors %}
-          <li class="error">{{ error }}</li>
-          {% endfor %}
-        </ul>
-    
-        {{ form.submit }}
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              {{ form.name.label }} {{ form.name }}
+              <ul>
+                {% for error in form.name.errors %}
+                <li class="error">{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              {{ form.set_id.label }} {{ form.set_id }}
+              <ul>
+                {% for error in form.set_id.errors %}
+                <li class="error">{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              {{ form.photo_url.label }} {{ form.photo_url }}
+              <ul>
+                {% for error in form.photo_url.errors %}
+                <li class="error">{{ error }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              {{ form.submit }}
+            </div>
+          </div>
+        </div>
       </fieldset>
     </form>
 </main>
