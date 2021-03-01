@@ -10,7 +10,7 @@ body {
   color: #000000;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6, {
+.h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: .5rem;
   font-weight: 600;
   line-height: 1.2;
@@ -42,7 +42,7 @@ body {
 }
 
 .navbar {
-  padding 1rem;
+  padding: 1rem;
   background-color: #FFCC00;
 }
 
@@ -65,12 +65,6 @@ body {
   flex-wrap: wrap;
   margin-right: -1px;
   margin-left: -1px;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-  padding-top: 100px;
 }
 
 .rounded {
