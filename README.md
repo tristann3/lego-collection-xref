@@ -1,5 +1,9 @@
 # lego collection cross reference
 
+# Heroku Branch
+
+- This branch will hold all of our heroku deployable code
+
 # About
 
 Lego Tracker is a tool used by LEGO collectors to see what sets they can build with their spare parts.
