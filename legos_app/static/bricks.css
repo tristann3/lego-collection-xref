@@ -59,32 +59,10 @@ body {
 }
 
 .row {
-<<<<<<< HEAD:legos_app/static/bricks.css
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -1px;
-  margin-left: -1px;
-}
-
-.img-fluid {
-  max-width: 100%;
-  height: auto;
-}
-
-@media (min-width: 992px) {
-  .col-lg-10 {
-    flex: 0 0 51%;
-    max-width: 51%;
-    display:inline-block;
-  }
-=======
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin-right: -1px;
     margin-left: -1px;
->>>>>>> b15d630e86f6ca4bf0307efcb472a6bb3d9f5a8c:static/bricks.css
 }

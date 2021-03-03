@@ -1,9 +1,5 @@
 from legos_app import app
 
-<<<<<<< HEAD
-if __name__ == "__main__":
-    app.run(debug=True)
-=======
 """ Modeled after Web1.1 plant database assignment """
 ############################################################
 # SETUP
@@ -76,4 +72,3 @@ def delete(lego_id):
 
 if __name__ == '__main__':
   app.run(debug=True)
->>>>>>> b15d630e86f6ca4bf0307efcb472a6bb3d9f5a8c
