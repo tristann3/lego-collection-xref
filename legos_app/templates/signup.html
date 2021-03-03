@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
 <div class="d-flex flex-column min-vh-100">
   <div class="flex-fill">
-    <h1>SIGN UP</h1>
+    <h1 style="text-align: center">SIGN UP</h1>
 
     <form action="/signup" method="POST">
       {{ form.csrf_token }}
