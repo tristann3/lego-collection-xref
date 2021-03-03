@@ -4,16 +4,19 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}" />
 
 <main>
-    <h1>NEW BRICK</h1>
+    <h1 style="text-align: center">NEW BRICK</h1>
     <form method="POST" action="{{ url_for('main.add_brick') }}">
       {{ form.csrf_token }}
       <fieldset>
         <legend style="text-align: center">PLEASE FILL OUT YOUR BRICK INFORMATION</legend>
 
         <div class="container">
-          <div class="row">
+          <div style="text-align: center" class="row">
             <div class="col">
-              {{ form.name.label }} {{ form.name }}
+              <div>
+                {{ form.name.label }} 
+              </div>
+              {{ form.name }}
               <ul>
                 {% for error in form.name.errors %}
                 <li class="error">{{ error }}</li>
@@ -21,9 +24,12 @@
               </ul>
             </div>
           </div>
-          <div class="row">
+          <div style="text-align: center" class="row">
             <div class="col">
-              {{ form.brick_id.label }} {{ form.brick_id }}
+              <div>
+                {{ form.brick_id.label }} 
+              </div>
+              {{ form.brick_id }}
               <ul>
                 {% for error in form.brick_id.errors %}
                 <li class="error">{{ error }}</li>
@@ -31,9 +37,12 @@
               </ul>
             </div>
           </div>
-          <div class="row">
+          <div style="text-align: center" class="row">
             <div class="col">
-              {{ form.quantity.label }} {{ form.quantity }}
+              <div>
+                {{ form.quantity.label }} 
+              </div>
+              {{ form.quantity }}
               <ul>
                 {% for error in form.quantity.errors %}
                 <li class="error">{{ error }}</li>
@@ -41,9 +50,12 @@
               </ul>
             </div>
           </div>
-          <div class="row">
+          <div style="text-align: center" class="row">
             <div class="col">
-              {{ form.photo_url.label }} {{ form.photo_url }}
+              <div>
+                {{ form.photo_url.label }} 
+              </div>
+              {{ form.photo_url }}
               <ul>
                 {% for error in form.photo_url.errors %}
                 <li class="error">{{ error }}</li>
@@ -51,7 +63,7 @@
               </ul>
             </div>
           </div>
-          <div class="row">
+          <div id="brickButton"style="text-align: center" class="row">
             <div class="col">
               {{ form.submit }}
             </div>

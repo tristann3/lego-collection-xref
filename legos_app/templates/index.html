@@ -111,9 +111,11 @@
   </div>
 
 <!-- CALL TO ACTION -->
+{% if not current_user.is_authenticated %}
 <div class="jumbotron text-center mb-0">
-  <a href="/sets" class="btn btn-primary">LOGIN INTO YOUR ACCOUNT</a>
+  <a href="/login" class="btn btn-primary">LOGIN INTO YOUR ACCOUNT</a>
 </div>
+{% endif %}
 </main>
 
 {% endblock %}
