@@ -59,6 +59,7 @@ body {
 }
 
 .row {
+<<<<<<< HEAD:legos_app/static/sets.css
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -71,4 +72,12 @@ body {
   border-radius: .25rem!important;
   padding-top: 100px;
   padding-bottom: 100px;
+=======
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -1px;
+    margin-left: -1px;
+>>>>>>> b15d630e86f6ca4bf0307efcb472a6bb3d9f5a8c:static/sets.css
 }
