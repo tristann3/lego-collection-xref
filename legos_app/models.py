@@ -8,14 +8,14 @@ class LegoBrick(db.Model):
   name = db.Column(db.String(200), nullable=False)
   brick_id = db.Column(db.String(80), nullable=False)
   quantity = db.Column(db.Integer, nullable=False)
-  photo_url = db.Column(db.String(80), nullable=False)
+  photo_url = db.Column(db.String(300), nullable=False)
 
 class LegoSet(db.Model):
   '''Lego Set Model '''
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(200), nullable=False)
   set_id = db.Column(db.String(80), nullable=False)
-  photo_url = db.Column(db.String(80), nullable=False)
+  photo_url = db.Column(db.String(300), nullable=False)
 
 class User(UserMixin, db.Model):
     ''' User Model '''
