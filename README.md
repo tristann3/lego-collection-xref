@@ -20,7 +20,7 @@
 
 </p>
 
-<h2 align="center">About</h2>
+> <h2 align="center">About</h2>
 
 Lego Tracker is a tool used by LEGO collectors to see what sets they can build with their spare parts.
 
@@ -38,7 +38,7 @@ In the future, We hope to develop this project so that:
 - Create a user's favorite list for sets
 
 
-<h2 align="center"> How To Download </h2>
+> <h2 align="center"> How To Download </h2>
 
 ```
 docker run --name repo alpine/git clone https://github.com/tristann3/lego-collection-xref
