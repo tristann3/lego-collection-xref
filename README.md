@@ -36,8 +36,21 @@ In the future, We hope to develop this project so that:
 
 - Create a user's favorite list for sets
 
-> <h2 align="center">Website Monitoring</h2>
 
+<h2 align="center"> How To Download </h2>
+
+```
+docker run --name repo alpine/git clone https://github.com/tristann3/lego-collection-xref
+```
+```
+docker build -t flask-image .
+```
+```
+docker run -p 5000:5000 --rm --name flask-container flask-image
+```
+
+
+> <h2 align="center">Website Monitoring</h2>
 <p align="center"><a>https://tristan15thompson.freshping.io/dashboard</a></p>
 
 
