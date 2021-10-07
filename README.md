@@ -9,6 +9,8 @@
     <img src="https://img.shields.io/github/commit-activity/y/tristann3/lego-collection-xref" />
     <!-- last commit -->
     <img src="https://img.shields.io/github/last-commit/tristann3/lego-collection-xref" />
+    <!-- code size  -->
+    <img src="https://img.shields.io/github/languages/code-size/tristann3/lego-collection-xref" />
     <!-- image size -->
     <img src ="https://img.shields.io/docker/image-size/tristann3/legos_app_image">
     <!-- website up/down status -->
