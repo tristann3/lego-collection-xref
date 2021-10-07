@@ -24,6 +24,7 @@
 
 Lego Tracker is a tool used by LEGO collectors to see what sets they can build with their spare parts.
 
+
 In the future, We hope to develop this project so that:
 
 - A User can cross reference a set's requirements to build a set they have not yet bought
@@ -52,6 +53,3 @@ docker run -p 5000:5000 --rm --name flask-container flask-image
 
 > <h2 align="center">Website Monitoring</h2>
 <p align="center"><a>https://tristan15thompson.freshping.io/dashboard</a></p>
-
-
-
