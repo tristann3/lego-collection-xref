@@ -21,8 +21,8 @@
 > <h2 align="center">Table of Contents</h2>
 <ul>
   <li><h2><a href=#About> About</a></h2></li>
-  <li><h2><a href=#About> How To Use</a></h2></li>
-  <li><h2><a href=#About> Website Monitoring</a></h2></li>
+  <li><h2><a href=#HowToUse> How To Use</a></h2></li>
+  <li><h2><a href=#Monitoring> Website Monitoring</a></h2></li>
 </ul>
 
 </br></br></br></br>
@@ -46,7 +46,7 @@ In the future, We hope to develop this project so that:
 
 </br></br></br></br>
 
-> <h2 align="center"> How To Use </h2>
+> <h2 id="HowToUse" align="center"> How To Use </h2>
 </br>
 
 <h2 align="center">Download with Docker Hub repository</h2>
@@ -70,5 +70,5 @@ docker run -p 5000:5000 --rm --name legos_app_container tristann3/legos_app_imag
 ```
 
 </br></br></br></br>
-> <h2 align="center">Website Monitoring</h2>
+> <h2 id="Monitoring" align="center">Website Monitoring</h2>
 <p align="center"><a>https://tristan15thompson.freshping.io/dashboard</a></p>
