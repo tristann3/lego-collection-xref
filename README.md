@@ -71,7 +71,6 @@ docker run -p 5000:5000 --rm --name legos_app_container tristann3/legos_app_imag
 
 </br></br></br></br>
 <h1 id="Monitoring" align="center">Website Monitoring</h2>
-<div align="center">
-<a src = "https://tristan15thompson.freshping.io/dashboard">FreshPing.io</a>
-</div>
+
+- <a src = "https://tristan15thompson.freshping.io/dashboard">FreshPing</a>
 
